@@ -1,17 +1,13 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { AuthModule } from '@auth';
+import { StopModule } from '@core/stop';
 import { GrqhpqlModule } from '@core/graphql';
 
 @Module({
    imports: [
+      AuthModule,
+      StopModule,
       GrqhpqlModule,
-   ],
-   controllers: [
-      AppController,
-   ],
-   providers: [
-      AppService
    ],
 })
 export class AppModule {}
