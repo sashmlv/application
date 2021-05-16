@@ -10,6 +10,6 @@
   "author": "sashmlv",
   "license": "UNLICENSE",
   "workspaces": [
-    "./modules/*"
+    "./packages/*"
   ]
 }
