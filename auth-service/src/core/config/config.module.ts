@@ -3,7 +3,7 @@ import { ConfigModule as CM } from '@nestjs/config';
 import { validate } from './config.validate';
 
 @Module({
-   exports: [
+   imports: [
       CM.forRoot({
          isGlobal: true,
          envFilePath: [

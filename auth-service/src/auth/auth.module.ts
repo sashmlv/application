@@ -6,5 +6,4 @@ import { AuthResolver } from './auth.resolver';
     AuthResolver,
   ],
 })
-export class AuthModule {
-}
+export class AuthModule {}

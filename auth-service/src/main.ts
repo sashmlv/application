@@ -3,6 +3,7 @@ import { Logger } from '@nestjs/common';
 import { AppModule } from './app.module';
 import { NestFactory } from '@nestjs/core';
 import { WinstonModule } from 'nest-winston';
+import { ConfigService } from '@nestjs/config';
 import {
    FastifyAdapter,
    NestFastifyApplication,
@@ -31,6 +32,19 @@ async function bootstrap() {
          logger
       }
    );
-   await app.listen(3000);
+   const config = app.get(ConfigService);
+   const host = config.get<string>('HOST');
+   const port = config.get<string>('PORT');
+
+   await app.listen(port, host, (err: Error, address: string) => {
+
+      if (err) {
+
+         logger.error(err);
+         return;
+      }
+
+      logger.log(`Server listen at: ${address}`);
+   });
 }
 bootstrap();
