@@ -43,8 +43,8 @@ describe('Auth', () => {
                mutation {
                   signup(
                      user: {
-                        login: \"username\",
-                        email: \"some@email.em\",
+                        login: \"login\",
+                        email: \"email@email.em\",
                         password: \"abcde\"
                      }
                   ) {

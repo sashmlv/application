@@ -1,6 +1,6 @@
 {
-  "name": "logger",
-  "description": "logger",
+  "name": "pulsar",
+  "description": "pulsar",
   "version": "0.0.1",
   "private": true,
   "main": "dist",
