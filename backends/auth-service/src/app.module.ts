@@ -5,6 +5,8 @@ import { LoggerModule } from '@core/logger';
 import { ConfigModule } from '@core/config';
 import { GrqhpqlModule } from '@core/graphql';
 
+// import p from '@packages/pulsar';
+
 @Module({
    imports: [
       AuthModule,
