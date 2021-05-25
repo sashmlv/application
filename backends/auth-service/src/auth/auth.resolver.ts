@@ -1,5 +1,5 @@
-import {TokensModel} from './models';
-import {UsersModel} from './models';
+import { UsersModel } from './models';
+import { TokensModel } from './models';
 import {
    SignupInput,
    SigninInput,

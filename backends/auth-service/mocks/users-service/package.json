@@ -1,0 +1,21 @@
+{
+  "name": "users-service-mock",
+  "description": "users service mock",
+  "version": "0.0.1",
+  "private": true,
+  "keywords": [],
+  "author": "sashmlv",
+  "license": "UNLICENSE",
+  "main": "dist",
+  "scripts": {
+    "start": "ts-node index"
+  },
+  "devDependencies": {
+    "@types/node": "^15.6.1",
+    "express": "^4.17.1",
+    "json-graphql-server": "^2.2.3",
+    "ts-node": "^10.0.0",
+    "tslib": "^1.14.1",
+    "typescript": "^4.2.4"
+  }
+}
