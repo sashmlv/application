@@ -5,13 +5,17 @@ import { NestFactory } from '@nestjs/core';
 import { WinstonModule } from 'nest-winston';
 import { ConfigService } from '@nestjs/config';
 import {
-   FastifyAdapter,
-   NestFastifyApplication,
-} from '@nestjs/platform-fastify';
-import {
    format,
    transports,
  } from 'winston';
+import {
+   Transport,
+   MicroserviceOptions,
+} from '@nestjs/microservices';
+import {
+   FastifyAdapter,
+   NestFastifyApplication,
+} from '@nestjs/platform-fastify';
 
 async function bootstrap() {
 
@@ -35,6 +39,17 @@ async function bootstrap() {
    const config = app.get(ConfigService);
    const host = config.get<string>('HOST');
    const port = config.get<string>('PORT');
+
+   const microservice = app.connectMicroservice<MicroserviceOptions>({
+      transport: Transport.KAFKA,
+      options: {
+         client: {
+            brokers: ['localhost:9092'],
+         }
+      }
+   });
+
+   await app.startAllMicroservicesAsync();
 
    await app.listen(port, host, (err: Error, address: string) => {
 
