@@ -1,9 +1,10 @@
-import 'dotenv/config';
+import * as dotenv from 'dotenv'
 import * as express from 'express';
 import jsonGraphqlExpress from 'json-graphql-server';
 
-const HOST = process.env.HOST;
-const PORT = + process.env.PORT;
+const env  = dotenv.config({path: '.env'}).parsed;
+const HOST = env.HOST;
+const PORT = Number(env.PORT);
 const app  = express();
 const data = {
 };
