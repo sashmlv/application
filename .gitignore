@@ -35,6 +35,7 @@ lerna-debug.log*
 
 # nestjs application
 .env
-dist
-node_modules
+dist/
+node_modules/
 package-lock.json
+kafka/
